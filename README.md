@@ -2,12 +2,10 @@
 #### Desenvolvendo um game Endless Runner utilizando JavaScript.
 
 
-## Dia 1
-### Base do Jogo
+## Dia 1 - ### Base do Jogo
 - Criando o personagem e cenário e dando movimento a eles.
 
-## Dia 2
-### Inimigos e colisão
+## Dia 2 - ### Inimigos e colisão
 - Inserindo inimigo, customizando sprites e colisão.
 
 ## Dia 3

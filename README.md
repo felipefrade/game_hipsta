@@ -1,5 +1,5 @@
 # Imersão JavaScript - GameDev Alura
-- #### Desenvolvendo um game Endless Runner utilizando JavaScript.
+#### Desenvolvendo um game Endless Runner utilizando JavaScript.
 
 
 ## Dia 1
@@ -8,7 +8,7 @@
 
 ## Dia 2
 ### Inimigos e colisão
-- Inserindo inimigo, customiando sprites e colisão.
+- Inserindo inimigo, customizando sprites e colisão.
 
 ## Dia 3
 ###

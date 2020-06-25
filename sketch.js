@@ -1,12 +1,17 @@
 let imagemCenario;
 let imagemPersonagem;
 let imagemInimigo;
+let imagemGameover;
 
+let somDoPulo;
 let somDoJogo;
+let somGameover;
 
 let cenario;
 let personagem;
 let inimigo;
+
+let puloMax = 0;
 
 const matrizInimigo = [
   [0 , 0],
@@ -59,10 +64,13 @@ const matrizPersonagem = [
 ];
 
 function preload() {
-  imagemCenario = loadImage ('imagens/cenario/floresta.png');
+  imagemCenario = loadImage ('imagens/cenario/floresta-vermelha.png');
   imagemPersonagem = loadImage ('imagens/personagem/correndo.png');
   imagemInimigo = loadImage ('imagens/inimigos/gotinha.png');
+  imagemGameover = loadImage ('imagens/assets/game-over.png');
   somDoJogo = loadSound('sons/trilha_jogo.mp3');
+  somDoPulo = loadSound('sons/somPulo.mp3');
+  somGameover = loadSound('sons/som-gameover.mp3');
 }
 
 function setup() {
@@ -74,14 +82,30 @@ function setup() {
   somDoJogo.loop();
 }
 
+function keyPressed() {
+  //console.log(key);
+  if((key=== 'ArrowUp') || (key === ' ')) {
+    personagem.pula();
+  }
+}
+
 function draw() {
   cenario.exibe();
   cenario.move();
 
-  personagem.exibe(); 
+  personagem.exibe();
+  personagem.aplicaGravidade(); 
 
   inimigo.exibe();
   inimigo.move();
+
+  if(personagem.estaColidindo(inimigo)){
+    //console.log('colidiu');
+    somDoJogo.stop();
+    noLoop();
+    somGameover.play();
+    image(imagemGameover, (width / 2) - 280, (height / 2) - 30, 618, 117);
+  }
 }
 
 function touchStarted() {
